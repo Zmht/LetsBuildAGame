@@ -16,15 +16,17 @@ public class Game extends Canvas implements Runnable{
 	private Thread thread;
 	private boolean running = false;
 	private Handler handler;
-	public HUD hud;
+	private HUD hud;
 	
 	public Game() {
 		handler = new Handler();
-		hud = new HUD();
 		
 		this.addKeyListener(new KeyInput(handler));
 		
 		new Window(WIDTH, HEIGHT,"Lets Build a Game!", this);
+
+		hud = new HUD();  
+
 		handler.addObject(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Player, handler));
 		handler.addObject(new BasicEnemy(WIDTH / 2, HEIGHT / 2, ID.BasicEnemy));
 
@@ -34,7 +36,7 @@ public class Game extends Canvas implements Runnable{
 
 	public synchronized void start() {
 		thread = new Thread(this);
-		thread.start();
+		thread.start(); 
 		running = true;
 	}
 	
