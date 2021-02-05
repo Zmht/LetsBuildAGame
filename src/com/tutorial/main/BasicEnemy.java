@@ -2,6 +2,7 @@ package com.tutorial.main;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public class BasicEnemy extends GameObject{
 
@@ -29,4 +30,9 @@ public class BasicEnemy extends GameObject{
 		g.fillRect(x, y, 16, 16);
 	}
 
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return new Rectangle(x, y, 16, 16);
+	}
 }
