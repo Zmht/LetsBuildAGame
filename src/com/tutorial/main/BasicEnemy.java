@@ -4,10 +4,16 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
+import jdk.internal.org.objectweb.asm.Handle;
+
 public class BasicEnemy extends GameObject{
 
-	public BasicEnemy(int x, int y, ID id) {
+private Handler handler;
+
+	public BasicEnemy(int x, int y, ID id, Handler handler) {
 		super(x, y, id);
+
+		this.handler = handler;
 
 		velX = 5;
 		velY = 5;
