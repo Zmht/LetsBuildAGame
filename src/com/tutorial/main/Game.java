@@ -19,27 +19,20 @@ public class Game extends Canvas implements Runnable{
 	private Handler handler;
 	private HUD hud;
 	private Random r;
+	private Spawn spawner;
+
 	public Game() {
 		handler = new Handler();
-		
 		this.addKeyListener(new KeyInput(handler));
-		
 		new Window(WIDTH, HEIGHT,"Lets Build a Game!", this);
 		r = new Random();
 		hud = new HUD();  
+		spawner = new Spawn(handler, hud);
 
 		handler.addObject(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.Player, handler));
-		
-		//handler.addObject(new BasicEnemy(WIDTH / 2, HEIGHT / 2, ID.BasicEnemy));
-		handler.addObject(new BasicEnemy(r.nextInt(WIDTH - 50), r.nextInt(HEIGHT - 50), ID.BasicEnemy, Hand
-		
-		import handler;ler handler));
+		handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH), r.nextInt(Game.HEIGHT), ID.BasicEnemy, handler));
+ 
 
-		import java.awt.color()_;
-
-		
-		
-		
 	}
 
 	public synchronized void start() {
@@ -90,6 +83,7 @@ public class Game extends Canvas implements Runnable{
 	private void tick() {
 		handler.tick();
 		hud.tick();
+		spawner.tick();
 	}
 	
 	private void render() {
