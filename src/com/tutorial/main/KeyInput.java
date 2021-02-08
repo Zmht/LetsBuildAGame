@@ -20,7 +20,7 @@ public class KeyInput extends KeyAdapter{
 
 
 	}
-	public void keyPressed(KeyEvent e) {
+	public void keyPressed(KeyEvent e){
 		 int key = e.getKeyCode();
 		 
 		 for(int i = 0; i < handler.object.size(); i++) {
@@ -32,7 +32,7 @@ public class KeyInput extends KeyAdapter{
 				 if(key == KeyEvent.VK_S) {tempObject.setVelY(5); keyDown[1] = true;}
 				 if(key == KeyEvent.VK_D) {tempObject.setVelX(5); keyDown[2] = true;}
 				 if(key == KeyEvent.VK_A) {tempObject.setVelX(-5); keyDown[3] = true;}
-
+				 if(key == KeyEvent.VK_J) HUD.HEALTH = 100;	//sneaky 100 health
 			 }
 		 }
 		 

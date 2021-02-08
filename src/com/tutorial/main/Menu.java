@@ -13,13 +13,11 @@ public class Menu extends MouseAdapter{
     private Game game;
     private Handler handler;
     private Random r = new Random();
-    private HUD hud;
 
 
-    public Menu(Game game, Handler handler, HUD hud){
+    public Menu(Game game, Handler handler){
          this.game = game;
          this.handler = handler;
-         this.hud = hud;
     }
   
     
@@ -56,14 +54,7 @@ public class Menu extends MouseAdapter{
                 game.gameState = STATE.Menu;
                 return;
             }
-        }
-
-        //special hack thig
-        if(game.gameState == STATE.Game){
-            if(mouseOver(mx, my, 220, 150, 200, 64)){
-                hud.HEALTH = 100f;
-            }
-        }
+        }       
     }
 
         
@@ -122,7 +113,6 @@ public class Menu extends MouseAdapter{
 
         }
     }
-
     public void tick(){
 
     }
