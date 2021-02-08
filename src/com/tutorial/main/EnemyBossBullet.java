@@ -10,8 +10,7 @@ public class EnemyBossBullet extends GameObject{
     private Handler handler;
     private Random r = new Random();
 
-    private Color purple = new Color(139, 0, 139);
-
+	
 	public EnemyBossBullet(float x, float y, ID id, Handler handler) {
 		super(x, y, id);
 

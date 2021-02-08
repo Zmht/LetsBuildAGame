@@ -12,11 +12,14 @@ public class Menu extends MouseAdapter{
 
     private Game game;
     private Handler handler;
-    Random r = new Random();
+    private Random r = new Random();
+    private HUD hud;
 
-    public Menu(Game game, Handler handler){
+
+    public Menu(Game game, Handler handler, HUD hud){
          this.game = game;
          this.handler = handler;
+         this.hud = hud;
     }
   
     
@@ -26,7 +29,7 @@ public class Menu extends MouseAdapter{
         int my = e.getY();
 
         if(game.gameState == STATE.Menu){
-            
+
         //Play Button
         if(mouseOver(mx, my, 220, 150, 200, 64)){
             game.gameState = STATE.Game;
@@ -52,6 +55,13 @@ public class Menu extends MouseAdapter{
             if(mouseOver(mx, my, 220, 350, 200, 64)){
                 game.gameState = STATE.Menu;
                 return;
+            }
+        }
+
+        //special hack thig
+        if(game.gameState == STATE.Game){
+            if(mouseOver(mx, my, 220, 150, 200, 64)){
+                hud.HEALTH = 100f;
             }
         }
     }
@@ -109,6 +119,7 @@ public class Menu extends MouseAdapter{
             g.setFont(fnt3);
             g.drawRect(220, 350, 200, 64);
             g.drawString("Back", 270, 390);
+
         }
     }
 

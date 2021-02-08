@@ -21,6 +21,7 @@ public class Game extends Canvas implements Runnable{
 	private Random r;
 	private Spawn spawner;
 	private Menu menu;
+	private Player player;
 
 	public enum STATE{
 		Menu,
@@ -31,15 +32,15 @@ public class Game extends Canvas implements Runnable{
 	public STATE gameState = STATE.Menu;
 
 	public Game() {
-		
+		r = new Random();
+		hud = new HUD();  
 		handler = new Handler();
-		menu = new Menu(this, handler);
+		menu = new Menu(this, handler, hud);
 		this.addKeyListener(new KeyInput(handler));
 		this.addMouseListener(menu);
 		new Window(WIDTH, HEIGHT,"Lets Build a Game!", this);
 		
-		r = new Random();
-		hud = new HUD();  
+		
 		spawner = new Spawn(handler, hud);
 
 
