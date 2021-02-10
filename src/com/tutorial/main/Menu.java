@@ -78,8 +78,20 @@ public class Menu extends MouseAdapter{
             Font fnt2 = new Font("arial", 1, 30);
            
             g.setFont(fnt);
-            g.setColor(Color.white);
-            g.drawString("Wave", 240, 70);
+            g.setColor(Color.blue);
+            g.drawString("D", 240, 70);
+            g.setColor(Color.red);
+            g.drawString("O", 275, 70);
+            g.setColor(Color.yellow);
+            g.drawString("D", 315, 70);
+            g.setColor(Color.blue);
+            g.drawString("G", 355, 70);
+            g.setColor(Color.green);
+            g.drawString("E", 395, 70);
+            /*g.setColor(Color.magenta);
+            g.drawString("e", 240, 70);*/
+            
+
     
             g.setFont(fnt2);
             g.setColor(Color.white);
