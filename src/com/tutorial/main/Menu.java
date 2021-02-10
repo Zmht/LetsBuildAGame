@@ -79,7 +79,7 @@ public class Menu extends MouseAdapter{
            
             g.setFont(fnt);
             g.setColor(Color.white);
-            g.drawString("Menu", 240, 70);
+            g.drawString("Wave", 240, 70);
     
             g.setFont(fnt2);
             g.setColor(Color.white);
